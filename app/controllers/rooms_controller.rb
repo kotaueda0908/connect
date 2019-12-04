@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
     def index
-        @rooms = Room.all
+        @rooms = Room.all.order(:id)
     end
 
     def new
@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
 
     def show
         @room = Room.find(params[:id])
-        @messages = Message.all
+        @messages = @room.messages
     end
 
 
