@@ -9,17 +9,15 @@ class RoomsController < ApplicationController
 
     def create
         @room = Room.new(room_params)
-        if @room.save
-            session[:room_id] = room.id
-            redirect_to @room, notice:"ユーザー登録に成功"
-        else
-            render :new
-        end
+        @room.save
+        redirect_to rooms_path
     end
 
     def show
         @room = Room.find(params[:id])
+        @messages = Message.all
     end
+
 
     private
 
