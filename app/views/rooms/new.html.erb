@@ -1,0 +1,20 @@
+<h1>Rooms</h1>
+<%= form_for :room, url: rooms_path do |f| %>
+  <p>
+    <%= f.label :title, "タイトル" %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :password, "パスワード" %><br>
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%#= f.label :password_confirmation, "パスワード確認" %><br>
+    <%#= f.text_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.submit "作成" %>
+  </p>
+
+<% end %>
